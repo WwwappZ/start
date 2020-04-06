@@ -41,11 +41,6 @@ module.exports = {
     },
     from: "info@recraplan.nl"
   },
-  roles: [{
-
-  }
-
-  ],
   openregist: false
 };
 
