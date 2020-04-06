@@ -1,10 +1,10 @@
 module.exports = {
   secret: "8y3ehdjkqnxoqhxp90e12iosnp2uw921insl1",
   expiresIn: "1d",
-  naam: "Recraplan",
+  naam: "Fietsverhuur",
   url: "/",
   PROJECT_DIR: __dirname,
-  database: "recraplan",
+  database: "fietsverhuur",
   domain: "https://recraplan.nl",
   TMClient: {
     username: "seeyou",
