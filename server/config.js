@@ -5,7 +5,7 @@ module.exports = {
   url: "/",
   PROJECT_DIR: __dirname,
   database: "fietsverhuur",
-  domain: "https://recraplan.nl",
+  domain: "https://huurmodule.nl",
   TMClient: {
     username: "seeyou",
     key: "mpb1KsIrfUSJ3LsFfDVtSY2LBWcyk9"
@@ -41,5 +41,10 @@ module.exports = {
     },
     from: "info@recraplan.nl"
   },
+  roles: [{
+
+  }
+
+  ],
   openregist: false
 };

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {signupUser,authError} from '../../../Reducers/auth/actions';
+import { message } from "../../../Reducers/loading/actions";
 import {fetchbedrijven} from '../../../Pages/Administrator/Bedrijven/Reducers/actions'
 class SignupPage extends Component {
   constructor(props) {
@@ -24,11 +25,13 @@ class SignupPage extends Component {
     if (this.state.password === this.state.passwordcheck) {
       this.props.signupUser({"email": this.state.email, "password": this.state.password, "name": this.state.name, "voornaam": this.state.voornaam,"achternaam": this.state.achternaam, "telefoonnummer": this.state.telefoonnummer,  "bedrijf": this.state.bedrijf,"role": this.state.role}).then((whatever) => {
         if (whatever === true) {
-          setTimeout(() => {
+          this.props.message(3000, "success", "Het account is met succes aangemaakt").then((whatever) => {
             this.props.history.push('/');
-          }, 3000);
+          })
         }
       });
+    } else {
+      this.props.message(5000, "danger", "De wachtwoorden zijn aan elkaar gelijk..");
     }
   }
   componentWillMount() {
@@ -132,4 +135,4 @@ function mapStateToProps(state) {
   return {errorMessage: state.auth.error, signupmsg: state.auth.signupmsg, bedrijven: state.bedrijven.items};
 }
 
-export default connect(mapStateToProps, {signupUser,authError, fetchbedrijven})(SignupPage);
+export default connect(mapStateToProps, {signupUser,authError, fetchbedrijven, message})(SignupPage);

@@ -17,8 +17,7 @@ class ProfileFotoPage extends React.Component {
     this.props.message(500000, "info", "Foto wordt geupload");
     e.preventDefault();
     let errors = {};
-    const file = e.target.files[0];  
-    console.log(file);
+    const file = e.target.files[0];
     this.props.upload_profile_image({file}).then((data) => {
       if (data.errors) {
         errors.mes = "foutje";

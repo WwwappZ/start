@@ -4,21 +4,15 @@ import Sitebar from "./Themes/Main/Sitebar.jsx";
 import Footer from "./Themes/Main/Footer.jsx";
 import Account from "./Themes/Account";
 import { Route, Switch, Redirect } from "react-router-dom";
-import LoginPage from "./Components/Account/Login/Login.jsx";
-import ForgetPage from "./Components/Account/Login/Forget";
-import NewPasswordPage from "./Components/Account/Login/NewPassword";
-import SmsPage from "./Components/Account/Sms/";
+import Audification from "./Components/Account/routes"
 import SignupPage from "./Components/Account/SignUp/Singup.jsx";
-import VerficationPage from "./Components/Account/SignUp/Confirmation.jsx";
 import RequireAuth from "./Auth/require_auth";
 import RequireAuthAdmin from "./Auth/require_auth_admin";
 import ProfilePage from "./Pages/Profile/profile";
-import GebruikersPage from "./Pages/Administrator/Gebruikers"
-import BedrijfEditPage from "./Pages/Administrator/Bedrijven/edit"
-import BedrijvenPage from "./Pages/Administrator/Bedrijven/index";
-import BedrijfInsertPage from "./Pages/Administrator/Bedrijven/insert";
-import Loading from "./Components/loading/loading"
-import NoMatch from "./Themes/Main/404";
+import GebruikersPage from "./Pages/Administrator/Gebruikers";
+import Bedrijven from "./Pages/Administrator/Bedrijven/routes"
+import Loading from "./Components/loading/loading";
+
 
 class App extends Component {
   render() {
@@ -28,26 +22,7 @@ class App extends Component {
       return (
         <Account>
           <Switch>
-            <Route exact path="/login" component={LoginPage} {...App} />
-            <Route
-              exact
-              path="/login/sms/:token"
-              component={SmsPage}
-              {...App}
-            />
-            <Route exact path="/login/forget" component={ForgetPage} {...App} />
-            <Route
-              exact
-              path="/login/forget/:code"
-              component={NewPasswordPage}
-            />
-            <Route
-              exact
-              path="/signup/verify/:code"
-              component={VerficationPage}
-              {...App}
-            />
-            <Route exact path="/404" component={NoMatch} />
+          <Audification/>
           </Switch>
         </Account>
       );
@@ -57,9 +32,10 @@ class App extends Component {
           <Header />
           <Sitebar />
           <div className="content-wrapper">
-          <Loading/>
+            <Loading />
             <section className="content">
               <Switch>
+              <Route exact path="/" component={RequireAuth(ProfilePage)} />
                 <Route
                   exact
                   path="/admin/signup"
@@ -70,29 +46,12 @@ class App extends Component {
                   path="/admin/profile"
                   component={RequireAuth(ProfilePage)}
                 />
-                 <Route
+                <Route
                   exact
                   path="/admin/gebruikers"
                   component={RequireAuth(GebruikersPage)}
-                />
-                   <Route
-                  exact
-                  path="/admin/bedrijven"
-                  component={RequireAuthAdmin(BedrijvenPage)}
-                />
-                <Route
-                  exact
-                  path="/admin/bedrijven/insert"
-                  component={RequireAuthAdmin(BedrijfInsertPage)}
-                />
-                       <Route
-                  exact
-                  path="/admin/bedrijven/edit/:id"
-                  component={RequireAuthAdmin(BedrijfEditPage)}
-                />
-                <Route exact path="/" component={RequireAuth(ProfilePage)} />
-              
-
+                />         
+                <Bedrijven/>
                 <Route render={() => <Redirect to="/404" />} />
               </Switch>
             </section>
