@@ -1,9 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ProfileFotoPage from './Components/ProfielFoto'
-import {fetchpush, UpdatePush, UpdateProfile} from './Reducers/actions';
+import {UpdateProfile, fetchprofile} from './Reducers/actions';
 import ProfielForm from './Components/ProfielForm'
-import PushNotification from './Components/PushNotification'
 import NewPasswordPage from './Components/NewPassword'
 import {message} from "../../Reducers/loading/actions"
 import 'react-widgets/dist/css/react-widgets.css'
@@ -15,7 +14,7 @@ class ProfilePage extends React.Component {
     loadingprofile: false
   }
   componentWillMount() {
-    this.props.fetchpush().then((data) => {
+    this.props.fetchprofile().then((data) => {
       this.setState({loadingprofile: true})
     })
   }
@@ -49,12 +48,7 @@ class ProfilePage extends React.Component {
 
   render() {
     const {username} = this.props
-    const mobile = () => {
-      if (this.props.push && this.state.loadingprofile) {
-        return <PushNotification onSubmit={this.submitpush}/>
-      }
 
-    }
     return (
       <div className="box box-default">
         <div className="box-header with-border">
@@ -63,10 +57,7 @@ class ProfilePage extends React.Component {
       <div className="row">
       <div className="col-md-4">
         <ProfileFotoPage/>
-        <div className="box-header with-border">
-          <h3 className="box-title"> Push Notification</h3>
-          {mobile()}
-          </div>
+    
           <div className="box-header with-border">
             <h3 className="box-title"> Wachtwoord wijzigen</h3>
             <NewPasswordPage setsucces={this.setsucces} seterror={this.seterror}/>
@@ -89,4 +80,4 @@ function mapStateToProps(state) {
   return {username: state.auth.user, profile: state.profile, push: state.push};
 }
 
-export default connect(mapStateToProps, {fetchpush, UpdatePush, UpdateProfile, message})(ProfilePage);
+export default connect(mapStateToProps, { fetchprofile, UpdateProfile, message})(ProfilePage);

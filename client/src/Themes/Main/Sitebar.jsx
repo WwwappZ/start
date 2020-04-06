@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form";
-
 
 class Sitebar extends Component {
   constructor(props) {
@@ -14,51 +11,6 @@ class Sitebar extends Component {
 
   render() {
     const { username, profile, token } = this.props;    
-    const logboekensidebar = () => {
-      if (
-        token.role === "admin" ||
-        token.role === "user" ||
-        token.role === "root"
-      ) {
-        return (
-          <li className="treeview">
-            <a href="#!">
-              <i className="fa fa-book" />
-              <span>Logboeken</span>
-              <span className="pull-right-container">
-                <i className="fa fa-angle-left pull-right" />
-              </span>
-            </a>
-            <ul className="treeview-menu">
-              <li>
-                <Link to="/logboek">
-                  <i className="fa fa-book" />
-                  <span>Overzicht</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/vergelijken">
-                  <i className="fa fa-book" />
-                  <span>Parken Vergelijken</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/logboek/website">
-                  <i className="fa fa-book" />
-                  <span>Invullen vanuit website</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/logboek/insert">
-                  <i className="fa fa-book" />
-                  <span>Handmatig Invullen</span>
-                </Link>
-              </li>
-            </ul>
-          </li>
-        );
-      }
-    };
 
     const beeldbankadmin = () => {
       if (token.role === "admin" || token.role === "root") {
@@ -130,11 +82,5 @@ function mapStateToProps(state) {
   };
 }
 
-Sitebar = reduxForm({
-  form: "kiesjaar" // a unique identifier for this form
-})(Sitebar);
+export default connect(mapStateToProps, {})(Sitebar);
 
-// You have to connect() to any reducers that you wish to connect to yourself
-Sitebar = connect(mapStateToProps, {  })(Sitebar);
-
-export default Sitebar;

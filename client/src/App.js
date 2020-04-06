@@ -14,6 +14,9 @@ import RequireAuth from "./Auth/require_auth";
 import RequireAuthAdmin from "./Auth/require_auth_admin";
 import ProfilePage from "./Pages/Profile/profile";
 import GebruikersPage from "./Pages/Administrator/Gebruikers"
+import BedrijfEditPage from "./Pages/Administrator/Bedrijven/edit"
+import BedrijvenPage from "./Pages/Administrator/Bedrijven/index";
+import BedrijfInsertPage from "./Pages/Administrator/Bedrijven/insert";
 import Loading from "./Components/loading/loading"
 import NoMatch from "./Themes/Main/404";
 
@@ -71,6 +74,21 @@ class App extends Component {
                   exact
                   path="/admin/gebruikers"
                   component={RequireAuth(GebruikersPage)}
+                />
+                   <Route
+                  exact
+                  path="/admin/bedrijven"
+                  component={RequireAuthAdmin(BedrijvenPage)}
+                />
+                <Route
+                  exact
+                  path="/admin/bedrijven/insert"
+                  component={RequireAuthAdmin(BedrijfInsertPage)}
+                />
+                       <Route
+                  exact
+                  path="/admin/bedrijven/edit/:id"
+                  component={RequireAuthAdmin(BedrijfEditPage)}
                 />
                 <Route exact path="/" component={RequireAuth(ProfilePage)} />
               
