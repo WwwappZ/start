@@ -1,7 +1,7 @@
 {
-  "name": "fietsverhuur",
+  "name": "client",
   "version": "0.0.1",
-  "titel": "Fietsverhuur",
+  "titel": "client",
   "private": true,
   "dependencies": {
     "@babel/core": "7.9.0",
