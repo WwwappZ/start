@@ -16,10 +16,9 @@ mongoose.Promise = require('bluebird');
 
 // DB Setup
 var options = {
-  useMongoClient: true,
-  socketTimeoutMS: 0,
-  keepAlive: true,
-  reconnectTries: 30
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
 };
 //mongoose.connect('mongodb://recraplan:8y3928e23hekjsh8y23h@wwwappz.nl:27017/'+config.database+'?authSource=recraplan' ,options);
 mongoose.connect('mongodb://admin:VJvybFmv2yhDguwzGJ@localhost:27017/'+config.database+'?authSource=admin' ,options);
