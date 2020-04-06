@@ -1,0 +1,172 @@
+.SandboxRoot.env-bp-820 .timeline-Tweet-text {
+    font-size: 20px;
+    line-height: 38px;
+    font-weight: 300;
+}
+
+.loginheight {
+  height: 50px;
+}
+
+.register-box, .login-box {
+    max-width: 560px;
+    margin: 1% auto;
+}
+
+.form-control-feedback {
+  text-align: left;
+}
+
+.btn-wild {
+    color: #ffffff;
+    background-color: #3ca838;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.green {
+color: #3aaa35
+}
+.blue {
+  color: #7fcff5
+}
+.darkgreen {
+  color: #2f5234
+}
+.rood {
+color: #e50040
+}
+.roze {
+  color: #ea5198
+}
+.bruin {
+  color: #693c10
+}
+.oranje {
+  color: #f7a600
+}
+.kleur {
+  padding-right: 10px;
+}
+
+.darkgreenbackground {
+  background-color: #2f5234;
+  color: #FFFFFF
+}
+.rc-time-picker-input {
+  height: 34px;
+}
+.DateInput_input {
+ padding: 3px 1px 1px;
+ font-size: 14px;
+}
+.countbar span {
+  margin-left:  5px;
+  margin-right: 20px;
+font-weight: bold;
+}
+html {
+  font-size: 14px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+    list-style: none;
+    margin: 0;
+    height: calc(195px + (1.7rem / 2));
+    overflow-y: scroll;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 100%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.react-datepicker__input-container, .react-datepicker-wrapper {
+    width: 100%;
+}
+.nav > li > span {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.skin-blue .main-header .navbar nav > li > a {
+      background: rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    padding: 0.0rem 1rem;
+}
+.img-circle {
+    border-radius: 50%;
+}
+.loginbutton {
+  margin-left: 14px
+}
+
+.SingleDatePickerInput__withBorder {
+    width: 100%;
+}
+
+.SingleDatePicker {
+    width: 100%;
+}
+label {
+    margin-bottom: 2px;
+}
+.DateInput {
+    width: 100%;
+}
+
+.center-block {
+  text-align: center;
+}
+
+.submit {
+  padding-top: 20px;
+}
+
+.btn-primary {
+    color: #414859;
+}
+
+.DateInput_1 {
+  width: 45% !important;
+}
+.delbotnleeg{
+      margin-top: 45px;
+}
+
+.page-item.active .page-link {
+    background-color: #414859;
+    border-color: #414859;
+}
+
+.box.box-primary {
+    border-top-color: #414859;
+}
+.time-label {
+    list-style: none;
+    font-size: 20px;
+}
+.loadingsearch {
+padding-top: 55px;
+}
+.square {
+  float:left;
+  position: relative;
+  width: 150px;
+  border: 0px;
+  margin:1.66%;
+  background-position:center center;
+  background-repeat:no-repeat;
+  background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+}
+.card-title {
+  margin-bottom: 0.2rem;
+  padding-top: 1em;
+}
+
+
+.sidebar-collapse #root .main-sidebar .sidebar form {
+    display: none;
+}
+.pointer {cursor: pointer;}
