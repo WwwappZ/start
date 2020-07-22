@@ -1,11 +1,11 @@
 module.exports = {
   secret: "8y3ehdjkqnxoqhxp90e12iosnp2uw921insl1",
   expiresIn: "1d",
-  naam: "Fietsverhuur",
+  naam: "Wildeten",
   url: "/",
   PROJECT_DIR: __dirname,
-  database: "fietsverhuur",
-  domain: "https://huurmodule.nl",
+  database: "vvvepe",
+  domain: "https://wildeten.nl",
   TMClient: {
     username: "seeyou",
     key: "mpb1KsIrfUSJ3LsFfDVtSY2LBWcyk9"
